@@ -1,8 +1,4 @@
 import React, {Component} from "react"
-import NavBar from '../components/NavBar'
-import Users from '../components/Users.js'
-
-const http = require('axios')
 
 class Home extends Component {
   constructor(props) {
@@ -11,14 +7,10 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
-        <NavBar/>
-        <div className="container">
-			  <h1>{"List of Users"}</h1>
-			  <Users/>
-        </div>
+      <div className="main">
+        <h1>Hello World!</h1>
+        <p>And they said React was a pain to setup!</p>
       </div>
-
     )
   }
 }
