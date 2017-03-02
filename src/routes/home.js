@@ -15,4 +15,4 @@ class Home extends Component {
   }
 }
 
-module.exports = Home
+module.exports = Home;

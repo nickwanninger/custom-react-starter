@@ -9,8 +9,6 @@ const PORT = process.env.PORT || 3000
 const pug = require('pug')
 // gzip compression
 const compression = require('compression')
-app.use(compression())
-
 
 // using webpack-dev-server and middleware in development environment
 if (process.env.NODE_ENV !== 'production') {
@@ -25,9 +23,17 @@ if (process.env.NODE_ENV !== 'production') {
   }));
   app.use(webpackHotMiddleware(compiler));
 }
+
+// use gzip compression
+app.use(compression())
 // use the /dist folder as a base for static files
 app.use(express.static(path.join(__dirname, 'dist')));
-
+// listen on the port and continue
+const server = app.listen(PORT, function (error) {
+  if (error)
+    return onsole.error("Error starting the server:", error);
+  return console.info(`Server running at http://localhost:${PORT}`);
+});
 
 
 // Put your express routes here...
@@ -42,8 +48,3 @@ app.get('*', function (req, res) {
 
 
 
-app.listen(PORT, function (error) {
-  if (error)
-    return onsole.error("Error starting the server:", error);
-  return console.info(`Server running at http://localhost:${PORT}`);
-});
