@@ -12,7 +12,6 @@ import ErrorPage from '../src/routes/error.js';
 const jsdom = require('jsdom');
 global.document = jsdom.jsdom('<!DOCTYPE><html><body></body></html>');
 global.window = document.defaultView;
-global.window.location.href = "http://localhost:3000/"
 global.navigator = {
   userAgent: 'node.js'
 };
