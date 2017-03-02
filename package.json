@@ -4,7 +4,7 @@
   "description": "react starter",
   "main": "server.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register ./tests.js",
+    "test": "mocha --compilers js:babel-core/register __tests__/tests.js",
     "start": "nodemon server.js",
     "postinstall": "webpack -p "
   },
@@ -22,6 +22,7 @@
     "expect": "^1.20.2",
     "express": "^4.13.4",
     "fetch-mock": "^5.9.4",
+    "history": "^4.5.1",
     "jsdom": "^9.11.0",
     "mocha": "^3.2.0",
     "mocha-loader": "^1.1.1",

@@ -8,7 +8,7 @@ class Home extends Component {
   render() {
     return (
       <div className="main">
-        <h1>Hello World!</h1>
+        <h1>{this.props.text || "Hello World!"}</h1>
         <p>And they said React was a pain to setup!</p>
       </div>
     )
