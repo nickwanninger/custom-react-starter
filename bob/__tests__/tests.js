@@ -10,7 +10,7 @@ import ErrorPage from '../src/routes/error.js';
 
 // setup a ghost (fake) browser to use to check tests as if it was in the context of a browser
 const jsdom = require('jsdom');
-global.document = jsdom.jsdom('<!DOCTYPE HTML><html><body></body></html>');
+global.document = jsdom.jsdom('<!DOCTYPE><html><body></body></html>');
 global.window = document.defaultView;
 global.navigator = {
   userAgent: 'node.js'
