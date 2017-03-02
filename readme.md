@@ -3,7 +3,7 @@
 ## How to?
 Run this command to clone the repo to your local machine
 ~~~
-curl curl -s http://nickwanninger.com/react-starter | sh
+curl -s http://nickwanninger.com/react-starter | sh
 ~~~
 Then run `npm start`. That will host the node server with nodemon on port 3000.
 
