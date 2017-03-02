@@ -4,7 +4,8 @@ import {renderIntoDocument} from 'react-addons-test-utils';
 
 
 // components that will be tested in this file.
-import Home from '../src/routes/home.js';
+import HomePage from '../src/routes/home.js';
+import ErrorPage from '../src/routes/error.js';
 
 
 // setup a ghost (fake) browser to use to check tests as if it was in the context of a browser
@@ -27,9 +28,15 @@ describe("DOM", () => {
 // Test the home component
 describe("Homepage", () => {
   it('renders with default', () => {
-    expect(renderIntoDocument(<Home />)).toExist()
+    expect(renderIntoDocument(<HomePage />)).toExist()
   })
   it('renders with custom text', () => {
-    expect(renderIntoDocument(<Home text="Hello There!"/>)).toExist()
+    expect(renderIntoDocument(<HomePage text="Hello There!"/>)).toExist()
+  })
+})
+// Test the home component
+describe("ErrorPage", () => {
+  it('renders with default', () => {
+    expect(renderIntoDocument(<ErrorPage />)).toExist()
   })
 })
