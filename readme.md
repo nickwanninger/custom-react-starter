@@ -1,4 +1,5 @@
 # React Starter
+![](http://i.imgur.com/VfuN8xi.jpg)
 ## How to?
 Run this command to clone the repo to your local machine
 ~~~
