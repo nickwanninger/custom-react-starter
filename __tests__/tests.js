@@ -9,7 +9,7 @@ import ErrorPage from '../src/routes/error.js';
 
 
 // setup a ghost (fake) browser to use to check tests as if it was in the context of a browser
-const jsdom = require('jsdom');
+import jsdom from 'jsdom';
 global.document = jsdom.jsdom('<!DOCTYPE><html><body></body></html>');
 global.window = document.defaultView;
 global.window.location.href = "http://localhost:3000/"
@@ -38,5 +38,11 @@ describe("Homepage", () => {
 describe("ErrorPage", () => {
   it('renders with default', () => {
     expect(renderIntoDocument(<ErrorPage />)).toExist()
+  })
+  it('renders with number code', () => {
+    expect(renderIntoDocument(<ErrorPage error={404}/>)).toExist()
+  })
+  it('renders with text error', () => {
+    expect(renderIntoDocument(<ErrorPage error={"something broke"}/>)).toExist()
   })
 })
